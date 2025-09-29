@@ -351,15 +351,62 @@ public class petServices : IRepository<Pet>
 
     private async Task DeletePtAsync()
     {
-        while (true)
+       while (true)
         {
-            string name;
-            Console.WriteLine("Enter the Pet's name: ");
-            name = Console.ReadLine().Trim().ToLower();
-            if (name.All(char.IsLetter) && !String.IsNullOrWhiteSpace(name))
+            string name, response;
+            while (true)
             {
-                break;
+                Console.Write("Enter the pet name you want to delete: ");
+                name = Console.ReadLine()?.Trim().ToLower();
+                if (name.All(char.IsLetter) && !String.IsNullOrWhiteSpace(name))
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid pet name, please try again");
             }
+            
+            var pet = await _context.Pets.FirstOrDefaultAsync(p => p.Name == name);
+            await DeleteAsync(pet);
+            if (pet != null)
+            {
+                Console.WriteLine("Pet has been successfully deleted");
+                while (true)
+                {
+                    Console.WriteLine("Do you want to delete another one? (y/n)");
+                    response = Console.ReadLine().Trim().ToLower();
+
+                    if (response == "y" || response == "yes" && response.Any(char.IsLetter) &&
+                        !String.IsNullOrWhiteSpace(response))
+                    {
+                        break;
+                    } else if (response == "n" || response == "no" && response.Any(char.IsLetter) &&
+                               !string.IsNullOrWhiteSpace(response))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect answer, try again");
+                    }
+                }
+
+                if (response == "y" || response == "yes")
+                {
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Pet not found");
+                Console.WriteLine("Please try again");
+                continue;
+            }
+
+            
         }
     }
     
@@ -394,8 +441,9 @@ public class petServices : IRepository<Pet>
                 case "4":
                     await UpdatePetAsync();
                     break;
-                // case "5":
-                //     await DeleteCLAsync();
+                case "5":
+                    await DeletePtAsync();
+                    break;
                 case "6":
                     return;
                 default:

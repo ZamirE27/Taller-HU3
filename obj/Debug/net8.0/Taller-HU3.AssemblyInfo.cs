@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Taller-HU3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d25b44dc36eed7e88b3153c8ffc566aeb06e09a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c1a94d091ec7d9603c9dae99099c8b6963f2774")]
 [assembly: System.Reflection.AssemblyProductAttribute("Taller-HU3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Taller-HU3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,5 @@
 ﻿using Taller_HU3.Data;
+using Taller_HU3.Menus;
 using Taller_HU3.Services;
 
 namespace Taller_HU3;
@@ -10,11 +11,11 @@ public class Program
         var context = new AppDbContext();
         var clientServices = new clientService(context);
         var petServices = new petServices(context);
+        var mainMenu = new IMenu(context);
 
         try
         {
-            // await clientServices.ShowMenuAsync();
-            await petServices.ShowMenuAsync();
+            mainMenu.MainMenu();
         }
         catch (Exception ex)
         {

@@ -396,7 +396,7 @@ public class clientService : IRepository<Client>
                     {
                         Console.Write("Enter the Client Address: ");
                         client.Address = Console.ReadLine()?.Trim().ToLower();
-                        if (client.Address.All(char.IsLetter) && !String.IsNullOrWhiteSpace(client.Address))
+                        if (!String.IsNullOrWhiteSpace(client.Address) && client.Address.All(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)))
                         {
                             break;
                         }
