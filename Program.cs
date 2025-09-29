@@ -9,10 +9,12 @@ public class Program
     {
         var context = new AppDbContext();
         var clientServices = new clientService(context);
+        var petServices = new petServices(context);
 
         try
         {
-            await clientServices.ShowMenuAsync();
+            // await clientServices.ShowMenuAsync();
+            await petServices.ShowMenuAsync();
         }
         catch (Exception ex)
         {

@@ -116,3 +116,4 @@
 /home/zamir-estrada/Documents/C#/Taller-HU3/obj/Debug/net8.0/Taller-HU3.pdb
 /home/zamir-estrada/Documents/C#/Taller-HU3/obj/Debug/net8.0/Taller-HU3.genruntimeconfig.cache
 /home/zamir-estrada/Documents/C#/Taller-HU3/obj/Debug/net8.0/ref/Taller-HU3.dll
+/home/zamir-estrada/Documents/C#/Taller-HU3/obj/Debug/net8.0/Taller-HU3.sourcelink.json

@@ -1,3 +1,5 @@
+using Taller_HU3.Models;
+
 namespace Taller_HU3.Domain.Interfaces;
 
 public interface IRepository<T> where T : class

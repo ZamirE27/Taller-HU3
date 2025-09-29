@@ -12,4 +12,11 @@ public class Pet
     public int ClientId { get; set; }
     public Client Client { get; set; }
     public ICollection<MedicalAt>  MedicalAts { get; set; }
+
+    public Pet(string name, string specie, int clientId)
+    {
+        Name = name;
+        Specie = specie;
+        ClientId = clientId;
+    }
 }
